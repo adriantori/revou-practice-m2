@@ -18,12 +18,33 @@
 //     }
 //     return true;
 // }
+// function uniqueValues(input: Array<number>){
+//     for (let i = 0; i < input.length; i++) {
+//         for (let j = 0; j < i; j++) {
+//             if (input[i] === input[j]) {
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+// }
+//new workaround
 function uniqueValues(input) {
-    for (let i = 0; i < input.length; i++) {
-        for (let j = 0; j < i; j++) {
-            if (input[i] === input[j]) {
-                return false;
+    let comparator = [];
+    let isPushed = false;
+    comparator.push(input[0]);
+    for (let i = 1; i < input.length; i++) {
+        isPushed = false;
+        for (let j = 0; j < comparator.length; j++) {
+            if (comparator[j] === input[i]) {
+                isPushed = true;
             }
+        }
+        if (isPushed) {
+            return false;
+        }
+        else {
+            comparator.push(input[i]);
         }
     }
     return true;
