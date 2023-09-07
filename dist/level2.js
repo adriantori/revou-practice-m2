@@ -3,7 +3,9 @@
 // > Input: `kuda`, `KuDa`
 // > Output: `true`
 function isSame(inputA, inputB) {
-    if (inputA === inputB) {
+    const lowerInputA = inputA.toLowerCase();
+    const lowerInputB = inputB.toLowerCase();
+    if (lowerInputA == lowerInputB) {
         return true;
     }
     else {
@@ -11,4 +13,5 @@ function isSame(inputA, inputB) {
     }
 }
 console.log(isSame('tes', 'tis'));
+console.log(isSame('tebs', 'teBs'));
 console.log(isSame('123', '123'));

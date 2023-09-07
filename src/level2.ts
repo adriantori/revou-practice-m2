@@ -3,7 +3,9 @@
 // > Output: `true`
 
 function isSame(inputA: string, inputB: string){
-    if(inputA === inputB){
+    const lowerInputA = inputA.toLowerCase()
+    const lowerInputB = inputB.toLowerCase()
+    if(lowerInputA == lowerInputB){
         return true;
     }else{
         return false;
@@ -11,4 +13,5 @@ function isSame(inputA: string, inputB: string){
 }
 
 console.log(isSame('tes','tis'));
+console.log(isSame('tebs','teBs'));
 console.log(isSame('123','123'));
